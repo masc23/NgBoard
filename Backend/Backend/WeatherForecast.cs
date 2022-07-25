@@ -1,4 +1,4 @@
-namespace RpgBoardApi
+namespace BackendApi
 {
 	public class WeatherForecast
 	{

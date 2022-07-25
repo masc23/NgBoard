@@ -1,6 +1,6 @@
-using RpgBoardApi.Core;
+using BackendApi.Core;
 
-namespace RpgBoardApi
+namespace BackendApi
 {
 	public static class Program
 	{

@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace RpgBoardApi.Core
+namespace BackendApi.Core
 {
 	public class AuthenticationMiddleware
 	{
