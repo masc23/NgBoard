@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { MatSliderModule } from '@angular/material/slider';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,13 +24,15 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { AuthInterceptorService } from './services/rest/auth-interceptor.service';
 import { AuthService } from './services/rest/auth.service';
+import { UpdateDialogComponent } from './components/update-dialog/update-dialog.component';
 
 
 @NgModule({
     declarations: [
         AppComponent,
         MainViewComponent,
-        DashboardComponent
+        DashboardComponent,
+        UpdateDialogComponent
     ],
     imports: [
         BrowserModule,
@@ -37,6 +40,7 @@ import { AuthService } from './services/rest/auth.service';
         AppRoutingModule,
         BrowserAnimationsModule,
         MatSliderModule,
+        MatDialogModule,
         LayoutModule,
         MatToolbarModule,
         MatButtonModule,

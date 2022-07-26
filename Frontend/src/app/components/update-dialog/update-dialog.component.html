@@ -1,0 +1,9 @@
+<h1 mat-dialog-title>Update verfügbar</h1>
+<div mat-dialog-content>
+    <p>Es wurde ein Update gefunden. Soll das Update jetzt geladen werden?</p>
+    <p>Wenn nicht, wird das Update beim nächsten Start automatisch geladen.</p>
+</div>
+<div mat-dialog-actions>
+    <button mat-button [mat-dialog-close]="'dont-do-update'">Nicht jetzt</button>
+    <button mat-button cdkFocusInitial [mat-dialog-close]="'do-update'">Ja, bitte aktualisieren</button>
+</div>
