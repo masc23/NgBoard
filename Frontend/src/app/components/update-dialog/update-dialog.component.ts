@@ -5,7 +5,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 @Component({
     selector:     'app-update-dialog',
     templateUrl: './update-dialog.component.html',
-    styleUrls: [ './update-dialog.component.scss' ]
+    styleUrls: [ './update-dialog.component.css' ]
 })
 export class UpdateDialogComponent
 {
