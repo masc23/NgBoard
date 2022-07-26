@@ -1,6 +1,4 @@
-﻿using System.Text;
-
-namespace BackendApi.Core
+﻿namespace Backend.Core
 {
 	public class AuthenticationMiddleware
 	{

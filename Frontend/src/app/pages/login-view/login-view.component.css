@@ -1,0 +1,32 @@
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3f51b5;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px #333;
+    font-size: 4em;
+    margin-bottom: 50px;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+}
+
+.login-card {
+    width: 300px;
+    max-width: 90vw;
+}
+
+.error-message {
+    font-weight: bolder;
+    color: #ff4081;
+}

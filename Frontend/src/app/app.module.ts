@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
@@ -10,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from '@angular/cdk/layout';
+import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -20,11 +22,13 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { AuthInterceptorService } from './services/rest/auth-interceptor.service';
 import { AuthService } from './services/rest/auth.service';
 import { UpdateDialogComponent } from './components/update-dialog/update-dialog.component';
+import { LoginViewComponent } from './pages/login-view/login-view.component';
 
 
 @NgModule({
@@ -32,15 +36,19 @@ import { UpdateDialogComponent } from './components/update-dialog/update-dialog.
         AppComponent,
         MainViewComponent,
         DashboardComponent,
-        UpdateDialogComponent
+        UpdateDialogComponent,
+        LoginViewComponent
     ],
     imports: [
         BrowserModule,
         HttpClientModule,
+        FormsModule,
         AppRoutingModule,
         BrowserAnimationsModule,
+        MatInputModule,
         MatSliderModule,
         MatDialogModule,
+        MatFormFieldModule,
         LayoutModule,
         MatToolbarModule,
         MatButtonModule,

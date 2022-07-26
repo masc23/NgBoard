@@ -1,6 +1,4 @@
-using BackendApi.Core;
-
-namespace BackendApi
+namespace Backend
 {
 	public static class Program
 	{
@@ -11,7 +9,7 @@ namespace BackendApi
 			// builder.Services.AddSingleton<>();
 
 			WebApplication app = builder.Build();
-			app.UseMiddleware<AuthenticationMiddleware>();
+			//app.UseMiddleware<AuthenticationMiddleware>();
 			app.MapControllers();
 			app.Run();
 		}

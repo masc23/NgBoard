@@ -1,1 +1,2 @@
-<main-view></main-view>
+<login-view *ngIf="!loggedIn" (stateUpdated)="updateState($event)"></login-view>
+<main-view  *ngIf="loggedIn"  (stateUpdated)="updateState($event)"></main-view>
