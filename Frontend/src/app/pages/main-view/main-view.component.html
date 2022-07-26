@@ -1,11 +1,12 @@
-<mat-sidenav-container class="sidenav-container">
+<mat-sidenav-container *ngIf="loggedIn" class="sidenav-container">
 
     <mat-sidenav #drawer class="sidenav" fixedInViewport
-          [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-          [mode]="(isHandset$ | async) ? 'over' : 'side'"
-          [opened]="(isHandset$ | async) === false">
+        [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+        [mode]="(isHandset$ | async) ? 'over' : 'side'"
+        [opened]="(isHandset$ | async) === false">
 
         <mat-toolbar>Menü</mat-toolbar>
+        <h3 class="menu-text">Noch keine Menüpunkte vorhanden</h3>
 
         <mat-nav-list>
             <a *ngIf="false" mat-list-item href="#">Teil 1</a>
