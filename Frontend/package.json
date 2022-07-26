@@ -1,6 +1,6 @@
 {
-  "name": "rpg-board",
-  "version": "0.0.2",
+  "name": "ng-board",
+  "version": "0.0.5",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
