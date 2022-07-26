@@ -1,12 +1,13 @@
 {
   "name": "rpg-board",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "build-prod": "npm version patch && node ./replace.build.js && ng build"
   },
   "private": true,
   "dependencies": {
@@ -36,6 +37,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
+    "replace-in-file": "^6.3.5",
     "typescript": "~4.7.2"
   }
 }
