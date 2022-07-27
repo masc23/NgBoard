@@ -18,7 +18,17 @@
 }
 
 .menu-text {
-    padding: 16px;
+    padding-left: 16px;
+    padding-bottom: 5px;
+}
+
+.logout-text {
+    padding-left: 16px;
+    cursor: pointer;
+}
+
+.logout-text:hover {
+    color: #ff4081;
 }
 
 .version-string {

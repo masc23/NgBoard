@@ -9,17 +9,39 @@ namespace Backend.Controllers
 	[Route("auth")]
 	public class AuthController : ControllerBase
 	{
-		[HttpGet]
+		[HttpGet("user")]
 		public IActionResult GetLoggedInStatus()
 		{
-			return Ok();
+			User? user = UserManager.GetUser(HttpContext);
+
+			if (user == null)
+			{
+				return Ok(new Result
+				{
+					Type    = "is-logged-in-result",
+					Success = false,
+					Payload = "nicht angemeldet"
+				});
+			}
+
+			var result = new Result
+			{
+				Type    = "is-logged-in-result",
+				Success = true,
+				Payload = user
+			};
+
+			return Ok(result);
 		}
 
 		[HttpPost]
 		public async Task<ActionResult<Result>> Login()
 		{
 			string code = await Request.GetRawBodyStringAsync();
-			if (code != "abc")
+
+			User? user = UserManager.LoginUser(code);
+
+			if (user == null)
 			{
 				return Ok(new Result
 				{
@@ -28,13 +50,6 @@ namespace Backend.Controllers
 					Payload = "Anmelde-Code ungültig"
 				});
 			}
-
-			var user = new User
-			{
-				Id = "123",
-				Name = "Martin",
-				Token = "token123"
-			};
 
 			var result = new Result
 			{

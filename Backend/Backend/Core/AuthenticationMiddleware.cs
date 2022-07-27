@@ -1,4 +1,6 @@
-﻿namespace Backend.Core
+﻿using Backend.Models;
+
+namespace Backend.Core
 {
 	public class AuthenticationMiddleware
 	{
@@ -23,19 +25,13 @@
 
 		private static async Task<bool> Authorized(HttpContext context)
 		{
-			string authHeader = context.Request.Headers["Authorization"];
-
-			if (authHeader != null && authHeader.StartsWith("Bearer"))
+			if (await BaseSettings.IsUrlOpen(context.Request.Path))
 			{
-				string token = authHeader["Bearer ".Length..].Trim();
-
-				if (token == "hello")
-				{
-					return true;
-				}
+				return true;
 			}
 
-			return false;
+			User? user = UserManager.GetUser(context);
+			return user != null;
 		}
     }
 }

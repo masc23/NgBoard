@@ -32,7 +32,7 @@ export class LoginViewComponent implements OnInit
             this.authService.tryLogin(this.loginCode).subscribe(result => {
                 if (result.success && result.type == "auth-result")
                 {
-                    this.authService.currentUser = result.payload as User;
+                    this.authService.setCurrentUser(result.payload as User);
                     this.stateUpdated.emit("login-success");
                 }
                 else

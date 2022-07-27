@@ -7,7 +7,7 @@
 
         <mat-toolbar>Menü</mat-toolbar>
         <h3 class="menu-text">Aktueller Nutzer: {{ user.name }}</h3>
-        <h3 class="menu-text">Noch keine Menüpunkte vorhanden</h3>
+        <h4 class="logout-text" (click)="tryLogout()">Abmelden</h4>
 
         <mat-nav-list>
             <a *ngIf="false" mat-list-item href="#">Teil 1</a>
@@ -30,7 +30,7 @@
                 *ngIf="isHandset$ | async">
                 <mat-icon aria-label="Menü ein- und ausblenden">menu</mat-icon>
             </button>
-          <span>RPG</span>
+          <span>{{ title }}</span>
         </mat-toolbar>
 
         <dashboard></dashboard>

@@ -22,8 +22,8 @@ export class MainViewComponent implements OnInit
         shareReplay()
     );
 
+    title: string = "RPG";
     versionString : string = "";
-
     user : User = {} as User;
 
     constructor(private breakpointObserver : BreakpointObserver, private authService : AuthService)
@@ -34,5 +34,12 @@ export class MainViewComponent implements OnInit
     ngOnInit() : void
     {
         this.user = this.authService.currentUser;
+        this.title = "RPG - Hallo " + this.user.name;
+    }
+
+    tryLogout() : void
+    {
+        this.authService.tryLogout();
+        window.location.href = "";
     }
 }

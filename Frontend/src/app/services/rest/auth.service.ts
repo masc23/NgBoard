@@ -17,6 +17,12 @@ export class AuthService
         this.currentUser.id = "0";
     }
 
+    setCurrentUser(user : User) : void
+    {
+        localStorage.setItem("token", user.token);
+        this.currentUser = user;
+    }
+
     getAuthToken() : string
     {
         let token = localStorage.getItem("token");        
@@ -25,16 +31,6 @@ export class AuthService
 
     tryLogin(code : string) : Observable<Result>
     {
-        let result = {} as Result;
-        result.type = "auth-result";
-        result.success = true;
-        result.payload = {} as User;
-        (result.payload as User).id = "123";
-        (result.payload as User).name = "Martin";
-        (result.payload as User).token = "123abc###";
-
-        return of(result);
-        /*
         let url = "/api/auth";
         let options = {
             headers: new HttpHeaders({
@@ -42,6 +38,16 @@ export class AuthService
             })
         };
         return this.http.post<Result>(url, code, options);
-        */
+    }
+
+    tryLogout() : void
+    {
+        localStorage.removeItem("token");
+    }
+
+    tryGetCurrentUser() : Observable<Result>
+    {
+        let url = "/api/auth/user";
+        return this.http.get<Result>(url);
     }
 }
